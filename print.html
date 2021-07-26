@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print </title>
+    <style>
+         #divone{
+            position: relative;
+            /* width: 600px;
+            height: 400px;
+            padding: 20px;
+            margin: 100px auto;
+            border: 2px solid red;
+            background-image: url(./images/Sample-Certificate.png);
+            background-size: cover;
+            text-align: center; */
+            size:landscape;
+            width:600mm; 
+            height:100mm; 
+        } 
+        img{
+            size:landscape;
+            width:600mm; 
+            height:100mm; 
+        }
+        #textprint{
+             position: absolute; 
+             top: 25%;
+             left: 40%;
+        }
+         .btn{
+             margin-top: 15em;
+            margin-left: 48%;
+         }
+    </style>
+</head>
+<body>
+    <div id="divone">
+       
+        <img src="./images/Sample-Certificate.png"style="width: 500px; height: 400px; padding-left: 35em;" alt="Certificate">
+        <h1 id="textprint">Ms. robin k</h1>
+    </div>
+    <div class="btn">
+        <button onclick="myfun('divone')">Print</button>
+        
+    </div>
+    <script type="text/javascript">
+     function myfun(paravalue){
+         var backup = document.body.innerHTML;
+         var divcontent = document.getElementById(paravalue).innerHTML;
+         document.body.innerHTML = divcontent;
+         window.print();
+         document.body.innerHTML = backup;
+     }
+     
+    </script>
+</body>
+</html>
